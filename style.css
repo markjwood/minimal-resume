@@ -1,0 +1,117 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul[class] {
+  list-style: none;
+  /* Caution: the following can cause specificity issues */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  line-height: 1.5;
+}
+
+/* Utility classes */
+
+.flow-content > * + * {
+  margin-top: var(--flow-spacer, 1rem);
+}
+
+/* General styling */
+
+body {
+  background: #c7e3f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+  width: 90%;
+  max-width: 35rem;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.hero {
+  padding: 2rem 0;
+}
+
+.hero > * {
+  width: fit-content;
+  margin: .75em auto;
+}
+
+.hero img {
+  height: 7.5rem;
+  width: 7.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.contact {
+  background: #287de3;
+}
+
+.social-buttons {
+  display: flex;
+  flex: 0 0 fit-content;
+  flex-wrap: wrap;
+}
+
+.btn {
+  margin: 0 1em 1em 0;
+  padding: 1em 2em;
+  border: 1px solid #fff;
+  border-radius: .25em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+  color: #57eef7;
+  border-color: #57eef7;
+}
