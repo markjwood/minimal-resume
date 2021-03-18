@@ -36,13 +36,6 @@ select {
   font: inherit;
 }
 
-ul[class] {
-  list-style: none;
-  /* Caution: the following can cause specificity issues */
-  margin: 0;
-  padding: 0;
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -59,11 +52,19 @@ body {
   margin-top: var(--flow-spacer, 1rem);
 }
 
+.subhead {
+  color: rgba(0,0,0,0.522);
+}
+
 /* General styling */
 
 body {
   background: #c7e3f2;
   font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
 }
 
 .card {
@@ -73,6 +74,32 @@ body {
   border-radius: 1rem;
   background: #fff;
 }
+
+@media (min-width: 105em) {
+  html {
+    font-size: 125%;
+  }
+  .card {
+    max-width: 40rem;
+  }
+}
+
+.list {
+  margin-top: 0;
+  list-style: none;
+}
+
+.list > li + li {
+  margin-top: 1em;
+}
+
+.list > li::before {
+  content: "\f058";
+  font-family: "FontAwesome";
+  margin-right: 1.5em;
+}
+
+/* Sections */
 
 .hero {
   padding: 2rem 0;
@@ -90,8 +117,59 @@ body {
   border-radius: 50%;
 }
 
+section {
+  background: var(--bg, #4299ff);
+  color: var(--fg, rgba(255,255,255,0.831));
+  width: 100%;
+  font-size: .85rem;
+}
+
+section a,
+section h2 {
+  color: #fff;
+}
+
+section:last-of-type {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  border-bottom: 1px solid #67a6f1;
+}
+
+.work {
+  --bg: #3288ed;
+}
+
 .contact {
-  background: #287de3;
+  --bg: #287de3;
+}
+
+.grid {
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid > * {
+  grid-column: span 3;
+  padding: 2em 0;
+}
+
+@media (min-width: 46em) {
+  .wide {
+    grid-column: span 2;
+  }
+  .section-title {
+    grid-column: span 1;
+    border-right: 1px solid #67a6f1;
+    border-bottom: 0;
+    justify-self: flex-end;
+  }
+  .grid > * {
+    padding: 0 2em;
+  }
 }
 
 .social-buttons {
@@ -102,15 +180,17 @@ body {
 
 .btn {
   margin: 0 1em 1em 0;
-  padding: 1em 2em;
-  border: 1px solid #fff;
+  padding: .75em 1.5em;
+  border: 1px solid rgba(255,255,255,0.831);
   border-radius: .25em;
   color: #fff;
   text-decoration: none;
 }
 
 .btn:hover,
-.btn:focus {
+.btn:focus,
+.grid a:hover,
+.grid a:focus {
   cursor: pointer;
   color: #57eef7;
   border-color: #57eef7;
